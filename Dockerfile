@@ -1,8 +1,12 @@
-# Container image that runs your code
-FROM alpine:3.10
+FROM python:3.7-alpine
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
+LABEL repository="https://github.com/menzew/th-actionsn"
+LABEL homepage="https://github.com/actions"
+
+RUN apk add --no-cache git less
+RUN pip install gitdb2==3.0.0 truffleHog==2.1.11
+
 COPY entrypoint.sh /entrypoint.sh
+COPY regexes.json /regexes.json
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["sh", "/entrypoint.sh"]
