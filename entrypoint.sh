@@ -10,7 +10,8 @@ fi
 if [ -n "${INPUT_GITHUBTOKEN}" ]; then
   githubRepo="https://$INPUT_GITHUBTOKEN@github.com/$GITHUB_REPOSITORY" # Overwrite for private repository if token provided
 else
-  githubRepo="https://github.com/$GITHUB_REPOSITORY" # Default target repository
+  #githubRepo="https://github.com/$GITHUB_REPOSITORY" # Default target repository
+  githubRepo="https://github.com/menzew/ClassLoadGrapher" # Default target repository
 fi
 
 query="$args $githubRepo" # Build args query with repository url
