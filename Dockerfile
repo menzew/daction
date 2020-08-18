@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM python:3.7-alpine
 
 LABEL repository="https://github.com/menzew/daction"
 LABEL homepage="https://github.com/actions"
