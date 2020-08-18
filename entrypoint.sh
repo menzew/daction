@@ -1,7 +1,7 @@
 #!/bin/sh -l
 set -e 
 
-args="--regex --entropy=True --max_depth=300" 
+args="--regex --entropy=False --max_depth=15" 
 
 if [ -n "${INPUT_SCANARGUMENTS}" ]; then
   args="${INPUT_SCANARGUMENTS}" # Overwrite if new options string is provided
