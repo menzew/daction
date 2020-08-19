@@ -1,18 +1,17 @@
 #!/bin/sh -l
 set -e 
 
-args="--regex --rules regexes.json --entropy=False" 
+args="--regex --rules /regexes.json --entropy=False" 
 
-if [ -n "${INPUT_SCANARGUMENTS}" ]; then
-  args="${INPUT_SCANARGUMENTS}" # Overwrite if new options string is provided
+if [ -n "${INPUT_THARGS}" ]; then
+  args="${INPUT_THARGS}"  
 fi
 
 if [ -n "${INPUT_GITHUBTOKEN}" ]; then
-  githubRepo="https://$INPUT_GITHUBTOKEN@github.com/$GITHUB_REPOSITORY" # Overwrite for private repository if token provided
+  grepo="https://$INPUT_GITHUBTOKEN@github.com/$GITHUB_REPOSITORY"  
 else
-  githubRepo="https://github.com/$GITHUB_REPOSITORY" # Default target repository
-  #githubRepo="https://github.com/menzew/ClassLoadGrapher" # Default target repository
+  grepo="https://github.com/$GITHUB_REPOSITORY" 
 fi
 
-query="$args $githubRepo" # Build args query with repository url
-trufflehog $query
+q="$args $grepo"  
+trufflehog $q
