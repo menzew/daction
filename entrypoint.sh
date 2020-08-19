@@ -1,7 +1,7 @@
 #!/bin/sh -l
 set -e 
 
-args="--regex --rules /regexes.json --entropy=False" 
+args="--json --regex --rules /regexes.json --entropy=False" 
 
 if [ -n "${INPUT_THARGS}" ]; then
   args="${INPUT_THARGS}"  
