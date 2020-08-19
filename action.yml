@@ -7,7 +7,7 @@ inputs:
   githubToken:
     description: 'GitHub Token to access a private repository.'
     required: false
-  scanArguments:
+  thargs:
     description: 'Argument options for scan.'
     required: false
 branding:
