@@ -1,4 +1,4 @@
-name: 'Trufflehog Scan for Secrets'
+name: 'Trufflehog Scan'
 description: 'Searches through git repositories for high entropy strings and secrets, digging deep into commit history'
 runs:
   using: 'docker'
@@ -10,6 +10,13 @@ inputs:
   thargs:
     description: 'Argument options for scan.'
     required: false
+  emailTo:
+    required: false
+    description: 'Email To Field'
+  emailFrom:
+    required: false
+    description: 'Email From Field'
 branding:
   icon: 'shield'  
-  color: 'yellow'
+  color: 'red'
+
