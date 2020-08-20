@@ -14,4 +14,9 @@ else
 fi
 
 q="$args $grepo"  
-trufflehog $q
+
+if [ -n "${INPUT_EMAILTO}" -a -n "${INPUT_EMAILFROM}"]; then
+	trufflehog $q | curl -X POST --header 'Authorization: Bearer $SENDGRIDAPIKEY' --header 'Content-Type: application/json' --data-binary @- https://api.sendgrid.com/v3/mail/send
+else
+	trufflehog $q
+
