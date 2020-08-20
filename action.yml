@@ -16,6 +16,9 @@ inputs:
   emailFrom:
     required: false
     description: 'Email From Field'
+  SENDGRIDAPIKEY:
+    required: false
+    description: 'Sendgrid API Key'
 branding:
   icon: 'shield'  
   color: 'red'
