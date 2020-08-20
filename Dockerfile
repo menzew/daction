@@ -13,10 +13,10 @@ LABEL "com.github.actions.description"="Scan repository for secrets"
 LABEL "com.github.actions.icon"="shield"
 LABEL "com.github.actions.color"="red"
 
-RUN apk add --no-cache git less
+RUN apk add --no-cache git less curl
 RUN pip install gitdb2==3.0.0 truffleHog==2.1.11
 
-RUN apk --update add git less openssh && \
+RUN apk --update add git less curl openssh && \
   rm -rf /var/lib/apt/lists/* && \
   rm /var/cache/apk/*
 
