@@ -20,3 +20,4 @@ if [ -n "${INPUT_EMAILTO}" -a -n "${INPUT_EMAILFROM}"]; then
 else
 	trufflehog $q
 
+fi
